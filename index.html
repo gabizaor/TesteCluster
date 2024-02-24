@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+        <script src="echarts.min.js"></script>
+        <script src="echarts.js"></script>
+
+        <title>TesteCluster</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <h2><span class="destacado">MEU APP</span></h2>
+        </header>
+          <!--opções do menu-->
+          <div class="topnav">
+            <a href="#home" class="active">Home</a>
+
+            <div id="myLinks">
+              <a href="">Menu Item 1</a>
+              <a href="#contact">Menu Item 2</a>
+              <a href="#about">Menu Item 3</a>
+            </div>
+            
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+        
+          <!-- codigo pra mostrar as outras opções do menu hamburguer-->
+          <script>
+            function myFunction() {
+              var x = document.getElementById("myLinks");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+              }
+            }
+          </script>
+
+
+
+        <!--imagem e frase em latim-->
+        <div class="content">
+            <div class="apresentacao2">
+                <!--imagem e frase em latim-->
+                <div class="imagem-com-texto">
+                    <img src="imagemprojeto.jpg" alt="Imagem de exemplo">
+                    <div class="texto-sobre-imagem">
+                        <div class="texto1">Lorem Ipsun</div>
+                        <div class="texto2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut ex ea commodo consequat.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="apresentacao3">
+            
+                <!-- código do gráfico -->
+                
+                <div id="main" style="width: 400px ;height:300px;"></div>
+                <script type="text/javascript">
+                    var myChart = echarts.init(document.getElementById('main'));
+            
+                    
+                    var option = {
+                        
+                        tooltip: {},
+                        legend: {
+                            data:['Sales']
+                        },
+                        xAxis: {
+                            data: ["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: 'Vendas',
+                            type: 'line',
+                            data: [800, 900, 850, 1350, 1400, 1450, 1470]
+                        }]
+                    };
+
+                    myChart.setOption(option);
+                </script>
+
+            <!-- frase sobre as vendas -->
+                <div class="ajuste">
+                    <p>Vendas em 2020 <strong><section class="enfase1">R$412,1 Milhões</section></strong></p>
+                    <p>Vendas em 2019 <strong><section class="enfase2">R$356,6 Milhões</section></strong></p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
